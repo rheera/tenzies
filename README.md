@@ -1,8 +1,32 @@
-# React + Vite
+# Tenzies App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Part of Scrimba's learn React course. A simple version of the tenzies dice game.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Tools](#tools)
+- [Features to Add](#features-to-add)
+- [Quick Start](#quick-start)
+
+## Tools
+
+Made with React and Vite.
+
+## Features to add
+
+- [ ] Make the game
+
+## Quick start
+
+1.  **Start developing.**
+
+    Navigate into the site’s directory and start it up.
+
+    ```shell
+    npm install
+    npm run dev
+    ```
+
+2.  **Open the code and start customizing!**
+
+    Your site is now running at http://localhost:5173!
