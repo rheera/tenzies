@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 3.813px;
   background: #fff;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
   &__number {
     color: #2b283a;
     text-align: center;
@@ -15,5 +16,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+  &--isHeld {
+    background: #59e391;
   }
 }
