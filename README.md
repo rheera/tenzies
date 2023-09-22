@@ -19,9 +19,10 @@ Made with React and Vite.
 - [x] Pressing roll randomizes dice
 - [x] Ability to hold dice which stops them from rolling
 - [x] Alert user that they won once all dice are the same
+- [x] Track number of rolls / time it took to win
+- [x] Save best rolls / time in localStorage
 - [ ] Add real dots on the dice instead of numbers using CSS
-- [ ] Track number of rolls / time it took to win
-- [ ] Save best rolls / time in localStorage
+- [ ] Make an animation to show the dice are spinning
 
 ## Quick start
 

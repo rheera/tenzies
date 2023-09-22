@@ -21,13 +21,22 @@ function App() {
 
   const [dice, setDice] = useState(allNewDice());
   const [tenzies, setTenzies] = useState(false);
+  const [rolls, setRolls] = useState(0);
+
+  const best = localStorage.getItem("best-rolls") || 9999;
 
   useEffect(() => {
     const dieValue = dice[0].value;
     dice.every((die) => die.value === dieValue && die.isHeld)
       ? setTenzies(true)
-      : setTenzies(false);
+      : null;
   }, [dice]);
+
+  useEffect(() => {
+    if (tenzies) {
+      rolls < best ? localStorage.setItem("best-rolls", rolls) : null;
+    }
+  }, [tenzies]);
 
   const diceElements = dice.map((die, index) => {
     return (
@@ -52,12 +61,15 @@ function App() {
     if (tenzies) {
       setDice(allNewDice());
       setTenzies(false);
+      setRolls(0);
+    } else {
+      setDice((oldDice) =>
+        oldDice.map((die) => {
+          return die.isHeld ? die : { ...die, value: randomDieNumber() };
+        })
+      );
+      setRolls((prevRolls) => prevRolls + 1);
     }
-    setDice((oldDice) =>
-      oldDice.map((die) => {
-        return die.isHeld ? die : { ...die, value: randomDieNumber() };
-      })
-    );
   }
 
   return (
@@ -69,6 +81,10 @@ function App() {
             Roll until all dice are the same. Click each die to freeze it at its
             current value between rolls.
           </h2>
+        </div>
+        <div className="rolls">
+          <h3 className="rolls__best">Best: {best >= 9999 ? "∞" : best}</h3>
+          <h3 className="rolls__current">Rolls: {rolls} </h3>
         </div>
         <section className="dice">{diceElements}</section>
         <button className="rollButton" onClick={rollDice}>

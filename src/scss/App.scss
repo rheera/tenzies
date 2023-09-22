@@ -54,6 +54,12 @@ main {
     }
   }
 
+  .rolls {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .rollButton {
     background-color: #5035ff;
     color: #fff;
