@@ -1,6 +1,6 @@
 # Tenzies App
 
-Part of Scrimba's learn React course. A simple version of the tenzies dice game.
+Part of Scrimba's learn React course. A simple version of the tenzies dice game. Live link here: [https://tenzies-8192ojbcz-rheera.vercel.app](https://tenzies-8192ojbcz-rheera.vercel.app) 
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ Part of Scrimba's learn React course. A simple version of the tenzies dice game.
 
 ## Tools
 
-Made with React and Vite.
+Made with React and Vite. Hosted by Vercel.
 
 ## Features to add
 
