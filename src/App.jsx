@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Confetti from "react-confetti";
 import "./scss/App.scss";
 import Die from "./components/Die";
 
@@ -19,6 +20,14 @@ function App() {
   };
 
   const [dice, setDice] = useState(allNewDice());
+  const [tenzies, setTenzies] = useState(false);
+
+  useEffect(() => {
+    const dieValue = dice[0].value;
+    dice.every((die) => die.value === dieValue && die.isHeld)
+      ? setTenzies(true)
+      : setTenzies(false);
+  }, [dice]);
 
   const diceElements = dice.map((die, index) => {
     return (
@@ -40,6 +49,10 @@ function App() {
   }
 
   function rollDice() {
+    if (tenzies) {
+      setDice(allNewDice());
+      setTenzies(false);
+    }
     setDice((oldDice) =>
       oldDice.map((die) => {
         return die.isHeld ? die : { ...die, value: randomDieNumber() };
@@ -59,8 +72,9 @@ function App() {
         </div>
         <section className="dice">{diceElements}</section>
         <button className="rollButton" onClick={rollDice}>
-          Roll
+          {tenzies ? "New Game" : "Roll"}
         </button>
+        {tenzies && <Confetti />}
       </main>
     </>
   );
