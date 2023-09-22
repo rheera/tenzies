@@ -14,7 +14,11 @@ Made with React and Vite.
 
 ## Features to add
 
-- [ ] Make the game
+- [x] Add copy text and roll button
+- [x] Make die components
+- [x] Pressing roll randomizes dice
+- [x] Ability to hold dice which stops them from rolling
+- [ ] Alert user that they won once all dice are the same
 
 ## Quick start
 
